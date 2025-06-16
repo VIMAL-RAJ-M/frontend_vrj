@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form id="form1">
+    <input type="number" id="id1" placeholder="number1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="**">**</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="number" id="id2" placeholder="number2">
+    <button type="button" onclick="Calculate()">Calculate</button>
+    <p id="result"></p>
+
+   </form>
+
+
+    <script>
+
+function Calculate(){
+    let number1=parseFloat(document.getElementById("id1").value);
+    let operator=document.getElementById("operator").value;
+    let number2=parseFloat(document.getElementById("id2").value);
+    let result;
+
+switch(operator){
+    case "+":
+        result=number1+number2;
+        break;
+    case "-":
+        result=number1-number2
+        break;
+    case "*":
+        result=number1*number2
+        break;
+    case "/":
+        result=number1/number2
+        break;
+    case "**":
+        result=number1**number2
+        break;
+    case "%":
+        result=number1%number2
+        break;
+    default:
+        result="invalid operator"
+        
+}
+document.getElementById("result").innerText=result;
+
+
+
+}
+
+        </script>
+    
+</body>
+</html>
